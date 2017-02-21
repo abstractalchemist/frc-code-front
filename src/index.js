@@ -1,17 +1,7 @@
 import React from 'react';
 import Rx from 'rx';
 import ReactDOM from 'react-dom';
-import Util from './utils';
-
-class Main extends React.Component {
-    constructor() {
-	super();
-    }
-
-    render() {
-	return (<div/>);
-    }
-}
+import Main from './main';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log("rendering content");
