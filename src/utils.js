@@ -3,7 +3,7 @@ import Rx from 'rx';
 export default (function() {
     return  {
 	GET(url, {headers}) {
-	    return Rx.fromPromise(new Promise((resolve,reject) => {
+	    return Rx.Observable.fromPromise(new Promise((resolve,reject) => {
 		let xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 		if(headers) {
@@ -28,7 +28,7 @@ export default (function() {
 	},
 	
 	POST(url, data) {
-	    return Rx.fromPromise(new Promise((resolve,reject) => {
+	    return Rx.Observable.fromPromise(new Promise((resolve,reject) => {
 	    }));
 	}
     }

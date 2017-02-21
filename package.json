@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "pushd dist; python -m SimpleHTTPServer; popd"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "page.js": "^4.13.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "rx": "^4.1.0"
@@ -24,6 +25,7 @@
     "gulp": "^3.9.1",
     "gulp-mocha": "^4.0.1",
     "gulp-watch": "^4.3.11",
+    "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
     "vinyl-source-stream": "^1.1.0"

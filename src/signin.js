@@ -10,14 +10,18 @@ class GoogleSignin extends React.Component {
     }
 
     componentDidMount() {
-	if(gapi) {
-	    gapi.load('auth2', this.start.bind(this));
+	try {
+	    if(gapi) {
+		gapi.load('auth2', this.start.bind(this));
+	    }
+	}
+	catch(e) {
 	}
     }
 
     start() {
 	if(gapi.auth2) {
-	    this.auth2 = gapi.auth2.init({clientId:"",scope:"profile"});
+	    this.auth2 = gapi.auth2.init({clientId:"339163665664-ebu30guu5kc3f2j215pp876ifkplhpb5.apps.googleusercontent.com",scope:"profile"});
 	    this.auth2.attachClickHandler(this.signinId, {}, this.onSuccess.bind(this), this.onFailure.bind(this));
 	}
 	
@@ -37,3 +41,5 @@ class GoogleSignin extends React.Component {
 		</div>)
     }
 }
+
+export default GoogleSignin;
