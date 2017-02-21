@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "pushd dist; python -m SimpleHTTPServer; popd"
+      "start": "pushd dist; python -m SimpleHTTPServer; popd",
+      "build" : "docker build -t frc-page:latest -f Dockerfile.armhf ." 
   },
   "author": "",
   "license": "ISC",
