@@ -1,7 +1,10 @@
 import React from 'react';
 
-function DailyTitle() {
-    return (<div className="mdl-card mdl-cell mdl-cell--12-6-col">
+function DailyTitle({title}) {
+    return (<div className="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+	    <div className="mdl-card__title">
+	    {title}
+	    </div>
 	    </div>)
 }
 
@@ -9,11 +12,11 @@ function DailyCodeUpload() {
     return (<div/>)
 }
 
-function 
-
 class Daily extends React.Component {
     render() {
-	return (<div/>)
+	return (<div className="mdl-grid portfolio-max-width">
+		<DailyTitle />
+	       </div>)
     }
 }
 
