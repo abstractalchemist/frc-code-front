@@ -20,6 +20,17 @@ function NewsCard({title,img,href,children}) {
 	    
 }
 
+function NewsTitle({title,text}) {
+    return (<div className="mdl-cell mdl-card mdl-cell--12-col mdl-shadow--4dp">
+	    <div className="mdl-card__title">
+	    <span className="mdl-card__title-text">{title}</span>
+	    </div>
+	    <div className="mdl-card__supporting-text">
+	    {text}
+	    </div>
+	    </div>);
+}
+
 class News extends React.Component {
     constructor() {
 	super();
@@ -40,14 +51,17 @@ class News extends React.Component {
     
     render() {
 	return (<div>
-		<h1>News for Programmers</h1>
+
 		<div className="mdl-grid portfolio-max-width">
+		<NewsTitle title="News For Programmers" text="Read Here Before going Anywhere else on the page!!!!!!!!!!"/>
 		{( _ => {
-		    return this.state.currentNews.map(obj => { return (<NewsCard {...obj} />)  });
+		    return this.state.currentNews.map(obj => { return (<NewsCard {...obj} >
+								       {obj.content}
+								      </NewsCard>)  });
 		})()}
 		</div>
 		</div>)
     }
 }
 
-export { NewsCard,  News as default};
+export { NewsCard, NewsTitle,  News as default};

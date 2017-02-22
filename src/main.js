@@ -4,6 +4,7 @@ import Header from './header';
 import Daily from './daily';
 import News from './news';
 import Tutorial from './tutorial';
+import Drawer from './drawer';
 
 function HeaderLink({id,text,active,updateView}) {
     const classes = ['mdl-navigation__link'];
@@ -47,12 +48,17 @@ class Main extends React.Component {
     }
     
     render() {
+	const links = [	<HeaderLink key="news" id="news" active={this.state.viewId == 'news'} updateView={this.updateView.bind(this)} text="News" />,
+			<HeaderLink key="tutorial" id="tutorial" active={this.state.viewId == 'tutorial'} updateView={this.updateView.bind(this)} text="Tutorial" />,
+			<HeaderLink key="daily" id="daily" active={this.state.viewId == 'daily'} updateView={this.updateView.bind(this)} text="Daily"/>]
+
 	return (<div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<Header title="Maui High FRC">
-		<HeaderLink key="news" id="news" active={this.state.viewId == 'news'} updateView={this.updateView.bind(this)} text="News" />
-		<HeaderLink key="tutorial" id="tutorial" active={this.state.viewId == 'tutorial'} updateView={this.updateView.bind(this)} text="Tutorial" />
-		<HeaderLink key="daily" id="daily" active={this.state.viewId == 'daily'} updateView={this.updateView.bind(this)} text="Daily"/>
+		{links}
 		</Header>
+		<Drawer>
+		{links}
+		</Drawer>
 		<main className="mdl-layout__content">
 		
 		{this.state.currentView}

@@ -18,7 +18,7 @@ describe('main suite', function() {
 	}
 	const mainElem = mount(<Main viewUpdated={testIt('daily')}/>);
 	
-	mainElem.find('#daily').simulate('click', {});
+	mainElem.find('header #daily').simulate('click', {});
 	
     })
 });

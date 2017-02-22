@@ -30,6 +30,8 @@ export default (function() {
 	POST(url, data) {
 	    return Rx.Observable.fromPromise(new Promise((resolve,reject) => {
 	    }));
+	},
+	PUT(url,data) {
 	}
     }
 })()
