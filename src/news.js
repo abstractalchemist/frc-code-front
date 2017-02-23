@@ -5,7 +5,7 @@ import NewsStore from './stores/newsstore';
 function NewsCard({title,img,href,children}) {
     return (<div className="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
             <div className="mdl-card__media">
-            <img className="article-image" src={img} border="0" alt=""></img>
+            <img className="article-image" src={img} style={{border:"0"}} alt=""></img>
             </div>
             <div className="mdl-card__title">
             <h2 className="mdl-card__title-text">{title}</h2>

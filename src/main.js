@@ -22,6 +22,10 @@ class Main extends React.Component {
 
     }
 
+    componentDidUpdate() {
+	componentHandler.upgradeDom();
+    }
+    
     updateView(evt) {
 
 	switch(evt.currentTarget.id) {
@@ -52,7 +56,7 @@ class Main extends React.Component {
 			<HeaderLink key="tutorial" id="tutorial" active={this.state.viewId == 'tutorial'} updateView={this.updateView.bind(this)} text="Tutorial" />,
 			<HeaderLink key="daily" id="daily" active={this.state.viewId == 'daily'} updateView={this.updateView.bind(this)} text="Daily"/>]
 
-	return (<div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	return (<div className="mdl-layout mdl-js-layout">
 		<Header title="Maui High FRC">
 		{links}
 		</Header>
