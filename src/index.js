@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("rendering content");
     ReactDOM.render( <Main />,document.getElementById('content'));
 
-    //page('news.html', _ => {});
-    //page('tutorial.html', _ => {});
-    //page('robot-prog.html', _ => {});
+    page('news.html', _ => {});
+    page('tutorial.html', _ => {});
+    page('robot-prog.html', _ => {});
+    page('daily.html', _ => {
+    });
 });

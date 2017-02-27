@@ -1,0 +1,3 @@
+FROM container4armhf/armhf-alpine:latest
+COPY dist /app
+CMD ["/
